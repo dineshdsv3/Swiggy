@@ -5,5 +5,14 @@
     </head>
     <body>
         <h1>Welcome to the food portal signup page</h1>
+        <p>Username: <input type="text" id="userName"></p>
+        <p>Password: <input type="password" id = "password"></p>
+        <select id="userType">
+            <option value="Admin">Admin</option>
+            <option value="User">User</option>
+        </select>
+        <p><input type="button" onclick="signup()" value="Signup"></p>
+        <span id="message"></span>
+        <script src="../js/signup.js"></script>
     </body>
 </html>
