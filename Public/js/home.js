@@ -1,9 +1,9 @@
 console.log("Welcome to home page");
 
-function  restaurantLogin(){
-    window.location.pathname ="/html/restaurantLogin.html";
+function  signup(){
+    window.location.pathname ="/html/signup.html";
 }
 
-function userLogin() {
-    window.location.pathname ="/html/userLogin.html";
+function login() {
+    window.location.pathname ="/html/login.html";
 }
