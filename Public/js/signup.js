@@ -4,32 +4,33 @@ async function signup() {
     let password = document.getElementById('password').value;
     let userType = document.getElementById('userType').value;
 
-
-
+    
 
     try {
 
         var registeredUser = await fetch('/signup', {
-            method: 'POST',
+            method: "POST", 
             headers: {
                 // Specifying the content type
                 'Content-Type' : 'application/json'
                 // here we are sending json data that's the reason we are specifiying above line
             },
-            data: JSON.stringify({
+            body: JSON.stringify({
                 name: userName,
                 password: password,
-                userType: userType,
+                userType: userType
             }),
             contentType: "application/json",
             dataType: 'json'
-        });
+    
+        })
         let span = document.getElementById('message');
-           span.innerText = register.message;
+            console.log(registeredUser);
+           span.innerText = registeredUser.message;
            span.style.color = "green";
 
     } catch (err) {
-        console.log(`error is ${JSON.stringify(err)}`)
+        console.log(`error is ${(err)}`)
     }
 
 

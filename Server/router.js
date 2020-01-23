@@ -1,17 +1,23 @@
 var express = require('express');
+var bodyParser = require('body-parser');
 var userDetails = require('./db.js');
-var path = require('path');
 var router = express.Router();
+var path = require('path');
+
+// Both the below lines are for to get the JSON. Otherwise we'll get undefiined
+router.use(bodyParser.urlencoded({extended:true}));
+router.use(bodyParser.json());
 
 router.post('/signup' ,(req,res) => {
     var body = req.body;
-    console.log(typeof(body));
+    console.log(body);
 
     userDetails.create(body, (err,data) => {
         if(err){
             res.status(500).json({message:err})
         }else{
-            res.send({message:"User Registered Successfully"});
+            // res.send({message:"User Registered Successfully"});
+            res.send({"message":"Registered Successfully"})
         }
     })
 
