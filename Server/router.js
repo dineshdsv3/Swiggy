@@ -16,13 +16,20 @@ router.post('/signup' ,(req,res) => {
         if(err){
             res.status(500).json({message:err})
         }else{
-            // res.send({message:"User Registered Successfully"});
-            res.send({"message":"Registered Successfully"})
+            res.send({message:"User Registered Successfully"});
         }
     })
 
 })
 
+router.post('/login', (req,res) => {
+    var body = req.body;
+    // console.log(body);
+    var userName = body.name;
+    var password = body.password;
+    var userType = body.userType;
+    // console.log(userName, password, userType);
+})
 
 router.get('/', (req,res) => {
     res.sendFile(path.join(__dirname,'../Public/html/index.html'));

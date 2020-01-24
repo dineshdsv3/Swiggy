@@ -26,8 +26,9 @@ async function signup() {
         })
         let span = document.getElementById('message');
             console.log(registeredUser);
-           span.innerText = registeredUser.message;
+           span.innerText = "User Registered";
            span.style.color = "green";
+           
 
     } catch (err) {
         console.log(`error is ${(err)}`)
