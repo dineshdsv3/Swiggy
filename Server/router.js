@@ -22,13 +22,32 @@ router.post('/signup' ,(req,res) => {
 
 })
 
-router.post('/login', (req,res) => {
+router.post('/login', async (req,res) => {
     var body = req.body;
     // console.log(body);
     var userName = body.name;
     var password = body.password;
     var userType = body.userType;
     // console.log(userName, password, userType);
+
+    try{
+       var user = await userDetails.find({name:userName,password:password,userType:userType})
+       console.log(user);
+       if(user.length){
+           if(user[0].name == userName && user[0].password == password){
+               if(user[0].userType == "Admin"){
+                   res.send({message: "userFound", userType:"Admin"});
+               }else if (user[0].userType == "User"){
+                   res.send({message:"userFound",userType:"User"})
+               }
+           }
+       }else {
+           res.send({message: "Username or Password Incorrect"});
+       }
+
+    } catch (err) {
+        res.send(err);
+    }
 })
 
 router.get('/', (req,res) => {

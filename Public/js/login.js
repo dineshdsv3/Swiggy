@@ -20,7 +20,15 @@ async function login() {
         contentType: "application/json",
         dataType: 'json'
     })
-
+    var message = document.getElementById('message');
+    // The below line for converting readble stream into json
+    var msg = (await login.json());
+    // console.log(msg);
+    if(msg.message == "userFound" && msg.userType == "User") {
+        window.location.pathname = "/html/userHome.html"
+    }else if(msg.message == "userFound" && msg.userType == "Admin"){
+        window.location.pathname = "/html/adminHome.html"
+    }
 
 
 
