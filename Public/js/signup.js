@@ -25,8 +25,8 @@ async function signup() {
     
         })
         let span = document.getElementById('message');
-            console.log(registeredUser);
-           span.innerText = "User Registered";
+            let msg = (await registeredUser.json());
+           span.innerText = msg.message;
            span.style.color = "green";
            
 
