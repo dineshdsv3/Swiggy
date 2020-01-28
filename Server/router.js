@@ -1,8 +1,12 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var userDetails = require('./db.js');
+var dbRecords = require('./db.js');
 var router = express.Router();
 var path = require('path');
+
+
+var userDetails = dbRecords.userDetails;
+var restaurantDetails = dbRecords.restaurant;
 
 // Both the below lines are for to get the JSON. Otherwise we'll get undefiined
 router.use(bodyParser.urlencoded({extended:true}));

@@ -8,7 +8,13 @@ var userSchema  = new mongoose.Schema({
     userType: String
 });
 
+var restaurant = new mongoose.Schema({
+    name: String,
+    tag: String
+})
+
 
 var userDetails = mongoose.model("User",userSchema);
+var restaurant = mongoose.model("restaurant",restaurant);
 
-module.exports = userDetails;
+module.exports = {userDetails, restaurant};
