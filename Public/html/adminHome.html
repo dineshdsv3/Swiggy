@@ -4,8 +4,20 @@
         <title>User Food portal</title>
     </head>
     <body>
-        <h1>Welcome Admin</h1>
-        <p>Here you can select register your restaurant and add your food items along with the price</p>
+        <h1>Welcome <span id="user"></span></h1>
+        <p>Click here to register your restaurant <input type ='button' onclick="addRestaurant()" value="Add Restaurant"></p>
+        <p>Here you can see the list of registered restaurants.</p>
+        <table border="1px">
+            <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>Location</td>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
    <script src="../js/adminHome.js"></script>
     </body>
 </html>

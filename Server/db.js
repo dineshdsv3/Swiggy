@@ -10,7 +10,8 @@ var userSchema  = new mongoose.Schema({
 
 var restaurant = new mongoose.Schema({
     name: String,
-    tag: String
+    ownerName: String,
+    location: String
 })
 
 

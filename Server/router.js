@@ -40,9 +40,9 @@ router.post('/login', async (req,res) => {
        if(user.length){
            if(user[0].name == userName && user[0].password == password){
                if(user[0].userType == "Admin"){
-                   res.send({message: "userFound", userType:"Admin"});
+                   res.send({message: "userFound",name: user[0].name ,userType:"Admin"});
                }else if (user[0].userType == "User"){
-                   res.send({message:"userFound",userType:"User"})
+                   res.send({message:"userFound",name: user[0].name,userType:"User"})
                }
            }
        }else {
@@ -57,7 +57,5 @@ router.post('/login', async (req,res) => {
 router.get('/', (req,res) => {
     res.sendFile(path.join(__dirname,'../Public/html/index.html'));
 })
-
-router.get('/second', (req,res) => {res.send("Hello")})
 
 module.exports = router;

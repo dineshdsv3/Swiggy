@@ -25,8 +25,11 @@ async function login() {
     var msg = (await login.json());
     // console.log(msg);
     if(msg.message == "userFound" && msg.userType == "User") {
+       alert(`welcome ${msg.name} your login successful`)
+       document.cookie = msg.name
         window.location.pathname = "/html/userHome.html"
     }else if(msg.message == "userFound" && msg.userType == "Admin"){
+        document.cookie = msg.name
         window.location.pathname = "/html/adminHome.html"
     }
 
