@@ -27,7 +27,7 @@ router.post('/signup' ,(req,res) => {
 })
 
 router.post('/login', async (req,res) => {
-    var body = req.body;
+    let body = req.body;
     // console.log(body);
     var userName = body.name;
     var password = body.password;
@@ -52,6 +52,25 @@ router.post('/login', async (req,res) => {
     } catch (err) {
         res.send(err);
     }
+})
+
+
+router.post('/addRes',  (req,res) => {
+    let body = req.body;
+    // console.log(body);
+
+    restaurantDetails.create(body, (err,data) => {
+        if(err){
+            res.send(`error is ${err}`)
+        }else {
+            res.send({message: "Restaurant Registered Successfully"});
+        }
+    })
+})
+
+router.post('/getDetails',(req,res) => {
+    let body = req.body;
+    console.log(body);
 })
 
 router.get('/', (req,res) => {
