@@ -68,9 +68,11 @@ router.post('/addRes',  (req,res) => {
     })
 })
 
-router.post('/getDetails',(req,res) => {
+router.post('/fetchDetails',(req,res) => {
     let body = req.body;
     console.log(body);
+    res.send("Hello world")
+    // Need to find the restaurant details using the body from DB and add those to the table
 })
 
 router.get('/', (req,res) => {

@@ -32,19 +32,20 @@ async function addRestaurant() {
 
 }
 
-(async function getDetails() {
+async function getDetails() {
+    console.log("hello IIFE")
 
- let details = await fetch('/getDetails' ,{
+ let details = await fetch('/fetchDetails' ,{
      method: "POST",
      headers: {
-         'Content-Type' : 'application/json'
+         'Content-Type': 'application/json'
      },
      body:({
-         ownerName : cookie
+         ownerName: cookie
      }),
      contentType: "application/json",
      dataType: 'json'
 
  })
- console.log(details);
-})
+//  console.log(details);
+}
