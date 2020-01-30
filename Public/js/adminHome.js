@@ -35,8 +35,8 @@ async function addRestaurant() {
 async function getDetails() {
     console.log("hello IIFE")
 
- let details = await fetch('/fetchDetails' ,{
-     method: "POST",
+ let details = await fetch('/fetchDetails/' ,{
+     method: "GET",
      headers: {
          'Content-Type': 'application/json'
      },
@@ -47,5 +47,6 @@ async function getDetails() {
      dataType: 'json'
 
  })
-//  console.log(details);
+ console.log(details);
 }
+getDetails();

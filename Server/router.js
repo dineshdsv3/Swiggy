@@ -72,7 +72,7 @@ router.post('/fetchDetails',(req,res) => {
     let body = req.body;
     console.log(body);
     res.send("Hello world")
-    // Need to find the restaurant details using the body from DB and add those to the table
+    // Need to find the restaurant details using the body from DB and add those to the table using the params
 })
 
 router.get('/', (req,res) => {
