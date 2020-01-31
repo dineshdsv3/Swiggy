@@ -45,6 +45,25 @@ async function getDetails() {
      dataType: 'json'
 
  })
- console.log(details);
+ let resArray = await details.json();
+
+ let tBody = document.getElementById('tBody');
+ resArray.forEach(val => {
+     console.log(val);
+    let tr = document.createElement('Tr');
+    let td = document.createElement('Td');
+    let td1 = document.createElement('Td');
+    
+    td.textContent = val.name;
+    td1.textContent = val.location;
+    tr.appendChild(td)
+    tr.appendChild(td1);
+    tBody.appendChild(tr);
+    console.log(tBody);
+    
+
+
+ })
+
 }
 getDetails();
