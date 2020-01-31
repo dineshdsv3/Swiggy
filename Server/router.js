@@ -68,9 +68,10 @@ router.post('/addRes',  (req,res) => {
     })
 })
 
-router.post('/fetchDetails',(req,res) => {
-    let body = req.body;
-    console.log(body);
+router.get('/fetchDetails/:username',(req,res) => {
+    let username = req.params.username;
+    console.log(req.params);
+    console.log(username);
     res.send("Hello world")
     // Need to find the restaurant details using the body from DB and add those to the table using the params
 })

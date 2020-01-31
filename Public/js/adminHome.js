@@ -35,14 +35,12 @@ async function addRestaurant() {
 async function getDetails() {
     console.log("hello IIFE")
 
- let details = await fetch('/fetchDetails/' ,{
+    // Here we are giving "cookie" as a params in the GET request 
+ let details = await fetch('/fetchDetails/' + cookie ,{
      method: "GET",
      headers: {
          'Content-Type': 'application/json'
      },
-     body:({
-         ownerName: cookie
-     }),
      contentType: "application/json",
      dataType: 'json'
 
