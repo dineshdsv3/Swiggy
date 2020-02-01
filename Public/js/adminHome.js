@@ -60,7 +60,7 @@ async function getDetails() {
     typeAtt.value = "button";
     
     let onClickAtt = document.createAttribute('onClick');
-    onClickAtt.val = "unNamed()";
+    onClickAtt.value = "unNamed()";
     
     let val1 = document.createAttribute('value');
     val1.value = "Add Food to your restaurant";
@@ -84,3 +84,9 @@ async function getDetails() {
 
 }
 getDetails();
+
+// need to add food items here
+function addFoodItems() {
+
+
+}
