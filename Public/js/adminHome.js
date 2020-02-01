@@ -53,11 +53,28 @@ async function getDetails() {
     let tr = document.createElement('Tr');
     let td = document.createElement('Td');
     let td1 = document.createElement('Td');
+    let td2 = document.createElement('Td');
+    let input = document.createElement('input');
     
+    let typeAtt = document.createAttribute('type');
+    typeAtt.value = "button";
+    
+    let onClickAtt = document.createAttribute('onClick');
+    onClickAtt.val = "unNamed()";
+    
+    let val1 = document.createAttribute('value');
+    val1.value = "Add Food to your restaurant";
+
+    input.setAttributeNode(typeAtt);
+    input.setAttributeNode(onClickAtt);
+    input.setAttributeNode(val1);
+
     td.textContent = val.name;
     td1.textContent = val.location;
+    td2.appendChild(input);
     tr.appendChild(td)
     tr.appendChild(td1);
+    tr.appendChild(td2);
     tBody.appendChild(tr);
     console.log(tBody);
     
